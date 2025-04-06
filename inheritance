@@ -1,0 +1,38 @@
+//chp 19 Inheritance
+//all Kotlin classes are final by Default
+//To inherit Open Key word
+//functions, properties are final by default
+//to override function or property Open keyword
+
+ open class Vehicle(
+    private val name: String,
+    private val speed: Int,
+){
+
+  open fun displayInfo(){
+     println("Vehicle Name: ${this.name}")
+     println(" Vehicle Speed : ${this.speed}")
+ }
+
+}
+class Car(
+    private val name: String,
+    private val speed: Int,
+    private val numOfDoors: Int,
+): Vehicle(
+    name,
+    speed
+){
+     override fun displayInfo(){
+       // println("Car Name: ${this.name}")
+       // println("Car Speed : ${this.speed}")
+         super.displayInfo()
+         println("numOfDoors: ${this.numOfDoors}")
+    }
+}
+
+     fun main(args: Array<String>) {
+      val car = Car("Toyota", 200,4
+      )
+         car.displayInfo()
+     }
